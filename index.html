@@ -89,197 +89,228 @@
     }
     footer { text-align: center; color: #4a5568; font-size: 0.8rem; padding-bottom: 30px; }
 
-    /* ===== RONALDO OVERLAY ===== */
-    .ro-overlay {
+    /* ===== CORGI OVERLAY ===== */
+    .corgi-overlay {
       position: fixed; inset: 0;
-      background: rgba(0,0,0,0.93);
+      background: rgba(0,0,0,0.88);
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
       z-index: 9999; opacity: 0; pointer-events: none;
       transition: opacity 0.3s;
     }
-    .ro-overlay.active { opacity: 1; pointer-events: all; }
+    .corgi-overlay.active { opacity: 1; pointer-events: all; }
 
-    .ro-spotlight {
-      position: absolute; width: 340px; height: 340px;
-      background: radial-gradient(ellipse, rgba(255,220,50,0.13) 0%, transparent 70%);
-      border-radius: 50%; top: 50%; left: 50%;
-      transform: translate(-50%, -58%);
-      pointer-events: none;
+    .corgi-stage {
+      position: relative; width: 380px; height: 160px;
     }
-
-    /* Stage */
-    .ro-stage {
-      position: relative; width: 320px; height: 200px;
-    }
-    .ro-ground {
+    .corgi-ground {
       position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
       border-radius: 2px;
     }
 
-    /* ===== CSS CHARACTER ===== */
-    .ro-figure {
+    /* ===== CSS CORGI ===== */
+    .corgi-figure {
       position: absolute; bottom: 3px; left: 50%;
       transform: translateX(-50%);
-      width: 80px; height: 160px;
+      width: 210px; height: 140px;
     }
 
-    /* Head */
-    .ro-head {
-      position: absolute; top: 0; left: 25px;
-      width: 30px; height: 30px;
-      background: #f5c5a3; border-radius: 50%; z-index: 2;
+    .cg-body {
+      position: absolute;
+      width: 115px; height: 50px;
+      background: #d4883e;
+      border-radius: 22px 16px 16px 22px;
+      bottom: 22px; left: 18px;
     }
-    .ro-hair {
-      position: absolute; top: 0; left: 0;
-      width: 30px; height: 13px;
-      background: #2a1a0e; border-radius: 15px 15px 0 0;
+    .cg-belly {
+      position: absolute;
+      width: 58px; height: 26px;
+      background: #f0ddb0;
+      border-radius: 50%;
+      bottom: 3px; left: 24px;
+    }
+    .cg-tail {
+      position: absolute;
+      width: 24px; height: 18px;
+      background: #e09e5a;
+      border-radius: 50% 30% 50% 30%;
+      bottom: 64px; left: 8px;
+      transform: rotate(-25deg);
+      transform-origin: right center;
+    }
+    .cg-head {
+      position: absolute;
+      width: 50px; height: 46px;
+      background: #d4883e;
+      border-radius: 50% 48% 44% 44%;
+      bottom: 58px; left: 118px;
+      overflow: visible;
+    }
+    .cg-ear-l {
+      position: absolute;
+      width: 0; height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 20px solid #b8703a;
+      top: -17px; left: 6px;
+      transform-origin: bottom center;
+    }
+    .cg-ear-r {
+      position: absolute;
+      width: 0; height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 23px solid #d4883e;
+      top: -20px; right: 3px;
+      transform-origin: bottom center;
+    }
+    .cg-eye {
+      position: absolute;
+      width: 7px; height: 7px;
+      background: #1a1a1a;
+      border-radius: 50%;
+      top: 10px; right: 9px;
+    }
+    .cg-eye::after {
+      content: '';
+      position: absolute;
+      width: 3px; height: 3px;
+      background: #fff;
+      border-radius: 50%;
+      top: 1px; left: 1px;
+    }
+    .cg-snout {
+      position: absolute;
+      width: 28px; height: 20px;
+      background: #c87840;
+      border-radius: 35% 55% 55% 35%;
+      bottom: 7px; right: -13px;
+    }
+    .cg-nose {
+      position: absolute;
+      width: 9px; height: 6px;
+      background: #1a1a1a;
+      border-radius: 50%;
+      top: 3px; right: 4px;
+    }
+    .cg-tongue {
+      position: absolute;
+      width: 10px; height: 13px;
+      background: #e05070;
+      border-radius: 0 0 7px 7px;
+      bottom: -9px; left: 8px;
     }
 
-    /* Jersey */
-    .ro-jersey {
-      position: absolute; top: 28px; left: 22px;
-      width: 36px; height: 42px;
-      background: #c8102e; border-radius: 4px 4px 0 0;
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-size: 13px; font-weight: 900;
-      letter-spacing: -1px; z-index: 1;
+    /* Short stubby legs — the corgi signature */
+    .cg-leg {
+      position: absolute;
+      width: 14px; height: 24px;
+      background: #c07838;
+      border-radius: 7px 7px 5px 5px;
+      transform-origin: top center;
+      bottom: 2px;
     }
+    .cg-leg-rl { left: 30px; background: #b06828; }
+    .cg-leg-rr { left: 44px; }
+    .cg-leg-fl { left: 112px; background: #b06828; }
+    .cg-leg-fr { left: 126px; }
 
-    /* Arms */
-    .ro-arm {
-      position: absolute; top: 30px;
-      width: 11px; height: 38px;
-      background: #f5c5a3; border-radius: 6px;
-      transform-origin: 50% 0%;
-      z-index: 0;
+    /* ===== RUNNING PHASE ===== */
+    .corgi-figure.running {
+      animation: cg-slide-in 1.0s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
     }
-    .ro-arm-l { left: 9px; }
-    .ro-arm-r { right: 9px; }
+    .corgi-figure.running .cg-leg-fr { animation: cg-leg-a 0.2s ease-in-out infinite; }
+    .corgi-figure.running .cg-leg-fl { animation: cg-leg-b 0.2s ease-in-out infinite; }
+    .corgi-figure.running .cg-leg-rr { animation: cg-leg-b 0.2s ease-in-out infinite; }
+    .corgi-figure.running .cg-leg-rl { animation: cg-leg-a 0.2s ease-in-out infinite; }
+    .corgi-figure.running .cg-tail   { animation: cg-tail-run 0.2s ease-in-out infinite; }
+    .corgi-figure.running .cg-ear-l  { animation: cg-ear 0.2s ease-in-out infinite; }
+    .corgi-figure.running .cg-ear-r  { animation: cg-ear 0.2s ease-in-out infinite; }
 
-    /* Shorts */
-    .ro-shorts {
-      position: absolute; top: 68px; left: 22px;
-      width: 36px; height: 22px;
-      background: #006b3f; z-index: 1;
-    }
-
-    /* Legs */
-    .ro-leg {
-      position: absolute; top: 88px;
-      width: 13px; height: 52px;
-      background: #f5f5f5; border-radius: 3px;
-      transform-origin: 50% 0%; z-index: 1;
-    }
-    .ro-leg-l { left: 22px; }
-    .ro-leg-r { right: 22px; }
-
-    /* Shoes */
-    .ro-shoe {
-      position: absolute; bottom: -6px;
-      width: 18px; height: 10px;
-      background: #111; border-radius: 4px;
-    }
-    .ro-shoe-l { left: -3px; }
-    .ro-shoe-r { right: -3px; }
-
-    /* ===== PHASE: RUNNING ===== */
-    .ro-figure.running {
-      animation: ro-slide-in 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-    }
-    .ro-figure.running .ro-arm-l { animation: ro-arm-l 0.22s ease-in-out infinite; }
-    .ro-figure.running .ro-arm-r { animation: ro-arm-r 0.22s ease-in-out infinite; }
-    .ro-figure.running .ro-leg-l { animation: ro-leg-l 0.22s ease-in-out infinite; }
-    .ro-figure.running .ro-leg-r { animation: ro-leg-r 0.22s ease-in-out infinite; }
-
-    @keyframes ro-slide-in {
-      from { transform: translateX(-260px); }
+    @keyframes cg-slide-in {
+      from { transform: translateX(-500px); }
       to   { transform: translateX(-50%); }
     }
-    @keyframes ro-arm-l { 0%,100%{transform:rotate(-32deg)}50%{transform:rotate(32deg)} }
-    @keyframes ro-arm-r { 0%,100%{transform:rotate(32deg)} 50%{transform:rotate(-32deg)} }
-    @keyframes ro-leg-l { 0%,100%{transform:rotate(-28deg)}50%{transform:rotate(28deg)} }
-    @keyframes ro-leg-r { 0%,100%{transform:rotate(28deg)} 50%{transform:rotate(-28deg)} }
+    @keyframes cg-leg-a { 0%,100%{transform:rotate(-35deg)} 50%{transform:rotate(35deg)} }
+    @keyframes cg-leg-b { 0%,100%{transform:rotate(35deg)}  50%{transform:rotate(-35deg)} }
+    @keyframes cg-tail-run { 0%,100%{transform:rotate(-10deg)} 50%{transform:rotate(30deg)} }
+    @keyframes cg-ear { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-14deg)} }
 
-    /* ===== PHASE: JUMPING (360° spin) ===== */
-    .ro-figure.jumping {
-      animation: ro-jump 1.0s cubic-bezier(0.33, 0, 0.66, 1) forwards;
+    /* ===== HAPPY PHASE ===== */
+    .corgi-figure.happy {
       transform: translateX(-50%);
+      animation: cg-happy 0.28s ease-in-out 3;
     }
-    .ro-figure.jumping .ro-arm-l { transform: rotate(-80deg); transition: transform 0.18s; }
-    .ro-figure.jumping .ro-arm-r { transform: rotate(80deg);  transition: transform 0.18s; }
-    .ro-figure.jumping .ro-leg-l { transform: rotate(-22deg); transition: transform 0.18s; }
-    .ro-figure.jumping .ro-leg-r { transform: rotate(22deg);  transition: transform 0.18s; }
+    .corgi-figure.happy .cg-tail   { animation: cg-tail-wag 0.14s ease-in-out infinite; }
+    .corgi-figure.happy .cg-leg-fr { animation: cg-leg-a 0.14s ease-in-out infinite; }
+    .corgi-figure.happy .cg-leg-fl { animation: cg-leg-b 0.14s ease-in-out infinite; }
+    .corgi-figure.happy .cg-leg-rr { animation: cg-leg-b 0.14s ease-in-out infinite; }
+    .corgi-figure.happy .cg-leg-rl { animation: cg-leg-a 0.14s ease-in-out infinite; }
 
-    @keyframes ro-jump {
-      0%   { transform: translateX(-50%) translateY(0)     rotate(0deg);   }
-      35%  { transform: translateX(-50%) translateY(-140px) rotate(150deg); }
-      65%  { transform: translateX(-50%) translateY(-140px) rotate(300deg); }
-      100% { transform: translateX(-50%) translateY(0)     rotate(360deg); }
+    @keyframes cg-happy {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%     { transform: translateX(-50%) translateY(-14px); }
     }
-
-    /* ===== PHASE: POSING (SIUU pose) ===== */
-    .ro-figure.posing {
-      animation: ro-land 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-    }
-    /* Arms spread wide horizontally — the iconic SIUU pose */
-    .ro-figure.posing .ro-arm-l { transform: rotate(-90deg); transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
-    .ro-figure.posing .ro-arm-r { transform: rotate(90deg);  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
-    .ro-figure.posing .ro-leg-l { transform: rotate(-20deg); transition: transform 0.4s; }
-    .ro-figure.posing .ro-leg-r { transform: rotate(20deg);  transition: transform 0.4s; }
-
-    @keyframes ro-land {
-      0%   { transform: translateX(-50%) translateY(-25px) rotate(360deg); }
-      55%  { transform: translateX(-50%) translateY(10px)  rotate(360deg); }
-      100% { transform: translateX(-50%) translateY(0)     rotate(360deg); }
+    @keyframes cg-tail-wag {
+      0%,100% { transform: rotate(-40deg); }
+      50%     { transform: rotate(40deg); }
     }
 
-    /* ===== SIUUU! TEXT ===== */
-    .ro-siuuu {
-      font-size: 5rem; font-weight: 900;
-      color: #f5a623;
-      text-shadow: 0 0 24px rgba(245,166,35,0.9), 0 0 70px rgba(245,166,35,0.35), 3px 3px 0 rgba(0,0,0,0.5);
-      transform: scale(0) rotate(-6deg);
-      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-      letter-spacing: 6px; user-select: none;
+    /* ===== WAL TEXT ===== */
+    .corgi-wal {
+      font-size: 4.5rem; font-weight: 900;
+      color: #f5c842;
+      text-shadow: 0 0 24px rgba(245,200,66,0.9), 3px 3px 0 rgba(0,0,0,0.5);
+      transform: scale(0) rotate(-4deg);
+      transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+      letter-spacing: 4px; user-select: none;
       margin-top: 16px;
     }
-    .ro-siuuu.show { transform: scale(1) rotate(-6deg); }
+    .corgi-wal.show { transform: scale(1) rotate(-4deg); }
 
-    /* ===== STARS ===== */
-    .ro-star {
+    /* ===== PAW BURST ===== */
+    .cg-paw {
       position: absolute; font-size: 1.5rem;
       opacity: 0; pointer-events: none;
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
     }
-    @keyframes ro-burst {
+    @keyframes cg-burst {
       0%   { transform: translate(-50%,-50%) translate(0,0) scale(0); opacity: 1; }
       60%  { opacity: 1; }
       100% { transform: translate(-50%,-50%) translate(var(--tx), var(--ty)) scale(1.1); opacity: 0; }
     }
-    .ro-star.burst { animation: ro-burst 0.75s ease-out forwards; }
+    .cg-paw.burst { animation: cg-burst 0.75s ease-out forwards; }
   </style>
 </head>
 <body>
 
-<!-- RONALDO OVERLAY -->
-<div id="roOverlay" class="ro-overlay">
-  <div class="ro-spotlight"></div>
-  <div class="ro-stage">
-    <div id="roFigure" class="ro-figure">
-      <div class="ro-head"><div class="ro-hair"></div></div>
-      <div class="ro-jersey">7</div>
-      <div class="ro-arm ro-arm-l"></div>
-      <div class="ro-arm ro-arm-r"></div>
-      <div class="ro-shorts"></div>
-      <div class="ro-leg ro-leg-l"><div class="ro-shoe ro-shoe-l"></div></div>
-      <div class="ro-leg ro-leg-r"><div class="ro-shoe ro-shoe-r"></div></div>
+<!-- CORGI OVERLAY -->
+<div id="corgiOverlay" class="corgi-overlay">
+  <div class="corgi-stage">
+    <div id="corgiFigure" class="corgi-figure">
+      <div class="cg-tail"></div>
+      <div class="cg-body">
+        <div class="cg-belly"></div>
+      </div>
+      <div class="cg-head">
+        <div class="cg-ear-l"></div>
+        <div class="cg-ear-r"></div>
+        <div class="cg-eye"></div>
+        <div class="cg-snout">
+          <div class="cg-nose"></div>
+          <div class="cg-tongue"></div>
+        </div>
+      </div>
+      <div class="cg-leg cg-leg-rl"></div>
+      <div class="cg-leg cg-leg-rr"></div>
+      <div class="cg-leg cg-leg-fl"></div>
+      <div class="cg-leg cg-leg-fr"></div>
     </div>
-    <div class="ro-ground"></div>
+    <div class="corgi-ground"></div>
   </div>
-  <div id="roSiuuu" class="ro-siuuu">SIUUU!</div>
+  <div id="corgiWal" class="corgi-wal">왈왈! 🐾</div>
 </div>
 
 <header>
@@ -314,32 +345,34 @@
 
 <script>
   const menus = [
-    { name: "삼겹살",   cat: "한식", emoji: "🥩", desc: "불 위에서 노릇하게 구운 삼겹살. 쌈과 함께 먹으면 최고!" },
-    { name: "된장찌개", cat: "한식", emoji: "🍲", desc: "구수한 된장 베이스에 두부와 채소가 가득한 집밥의 정석." },
-    { name: "비빔밥",   cat: "한식", emoji: "🍚", desc: "신선한 나물과 고추장, 달걀 프라이가 올라간 영양 만점 한 그릇." },
-    { name: "제육볶음", cat: "한식", emoji: "🌶️", desc: "매콤달콤한 고추장 양념으로 볶은 돼지고기. 밥 도둑!" },
-    { name: "부대찌개", cat: "한식", emoji: "🫕", desc: "햄, 소시지, 라면이 들어간 풍성한 찌개. 시원하게 끓여서 먹자." },
-    { name: "갈비탕",   cat: "한식", emoji: "🍖", desc: "진한 사골 국물에 소갈비가 푹 익은 보양식." },
+    { name: "삼겹살",     cat: "한식", emoji: "🥩", desc: "불 위에서 노릇하게 구운 삼겹살. 쌈과 함께 먹으면 최고!" },
+    { name: "된장찌개",   cat: "한식", emoji: "🍲", desc: "구수한 된장 베이스에 두부와 채소가 가득한 집밥의 정석." },
+    { name: "비빔밥",     cat: "한식", emoji: "🍚", desc: "신선한 나물과 고추장, 달걀 프라이가 올라간 영양 만점 한 그릇." },
+    { name: "제육볶음",   cat: "한식", emoji: "🌶️", desc: "매콤달콤한 고추장 양념으로 볶은 돼지고기. 밥 도둑!" },
+    { name: "부대찌개",   cat: "한식", emoji: "🫕", desc: "햄, 소시지, 라면이 들어간 풍성한 찌개. 시원하게 끓여서 먹자." },
+    { name: "갈비탕",     cat: "한식", emoji: "🍖", desc: "진한 사골 국물에 소갈비가 푹 익은 보양식." },
     { name: "순두부찌개", cat: "한식", emoji: "🫙", desc: "부드러운 순두부와 매운 국물의 완벽한 조화." },
-    { name: "자장면",   cat: "중식", emoji: "🍜", desc: "춘장 소스에 양파와 돼지고기가 듬뿍. 배달의 클래식." },
-    { name: "짬뽕",     cat: "중식", emoji: "🌊", desc: "해물과 채소가 가득한 빨간 국물 면 요리." },
-    { name: "탕수육",   cat: "중식", emoji: "🥡", desc: "바삭하게 튀긴 고기에 새콤달콤한 소스. 부먹? 찍먹?" },
-    { name: "마파두부", cat: "중식", emoji: "🧆", desc: "얼얼하게 매운 사천식 두부 요리. 밥에 얹어 먹으면 꿀맛." },
-    { name: "초밥",     cat: "일식", emoji: "🍣", desc: "신선한 생선과 밥의 조화. 다양한 종류로 즐기자." },
-    { name: "라멘",     cat: "일식", emoji: "🍥", desc: "진한 육수에 쫄깃한 면발, 차슈까지. 든든한 한 끼." },
-    { name: "돈가스",   cat: "일식", emoji: "🍱", desc: "바삭한 빵가루 옷을 입은 두꺼운 돼지고기 커틀릿." },
-    { name: "우동",     cat: "일식", emoji: "🍢", desc: "굵고 쫄깃한 면발에 맑은 국물. 속이 편안해지는 맛." },
-    { name: "파스타",   cat: "양식", emoji: "🍝", desc: "알리오 올리오, 까르보나라, 봉골레 — 취향대로 선택." },
-    { name: "피자",     cat: "양식", emoji: "🍕", desc: "쫄깃한 도우에 치즈가 가득. 나눠 먹으면 더 맛있어." },
-    { name: "스테이크", cat: "양식", emoji: "🥩", desc: "미디엄 레어로 구운 부드러운 소고기. 오늘만큼은 특별하게." },
-    { name: "리조또",   cat: "양식", emoji: "🫘", desc: "크림 또는 토마토 베이스로 만든 이탈리안 쌀 요리." },
-    { name: "떡볶이",   cat: "분식", emoji: "🍢", desc: "쫄깃한 떡과 매콤달콤한 고추장 소스의 국민 간식." },
-    { name: "순대국밥", cat: "분식", emoji: "🥣", desc: "뽀얀 국물에 순대와 내장이 가득. 든든한 서민 음식." },
-    { name: "김밥",     cat: "분식", emoji: "🌯", desc: "참기름 향 가득한 밥에 다양한 재료가 들어간 한 줄." },
-    { name: "라면",     cat: "분식", emoji: "🍜", desc: "라면도 맛있는 저녁 식사. 계란 하나 추가는 필수." },
-    { name: "햄버거",   cat: "패스트푸드", emoji: "🍔", desc: "두꺼운 패티와 신선한 채소, 소스가 들어간 간편한 식사." },
-    { name: "치킨",     cat: "패스트푸드", emoji: "🍗", desc: "바삭하게 튀긴 프라이드, 아니면 매콤한 양념치킨?" },
-    { name: "타코",     cat: "패스트푸드", emoji: "🌮", desc: "또르띠야에 고기와 채소, 살사 소스가 가득." },
+    { name: "밀면",       cat: "한식", emoji: "🍜", desc: "부산식 냉면. 밀가루 면발에 시원하고 담백한 육수를 부어 먹는 여름 별미." },
+    { name: "자장면",     cat: "중식", emoji: "🍜", desc: "춘장 소스에 양파와 돼지고기가 듬뿍. 배달의 클래식." },
+    { name: "짬뽕",       cat: "중식", emoji: "🌊", desc: "해물과 채소가 가득한 빨간 국물 면 요리." },
+    { name: "탕수육",     cat: "중식", emoji: "🥡", desc: "바삭하게 튀긴 고기에 새콤달콤한 소스. 부먹? 찍먹?" },
+    { name: "마파두부",   cat: "중식", emoji: "🧆", desc: "얼얼하게 매운 사천식 두부 요리. 밥에 얹어 먹으면 꿀맛." },
+    { name: "마라탕",     cat: "중식", emoji: "🥘", desc: "얼얼한 마라 육수에 원하는 재료를 골라 넣는 중국식 탕. 중독성 있는 맛!" },
+    { name: "초밥",       cat: "일식", emoji: "🍣", desc: "신선한 생선과 밥의 조화. 다양한 종류로 즐기자." },
+    { name: "라멘",       cat: "일식", emoji: "🍥", desc: "진한 육수에 쫄깃한 면발, 차슈까지. 든든한 한 끼." },
+    { name: "돈가스",     cat: "일식", emoji: "🍱", desc: "바삭한 빵가루 옷을 입은 두꺼운 돼지고기 커틀릿." },
+    { name: "우동",       cat: "일식", emoji: "🍢", desc: "굵고 쫄깃한 면발에 맑은 국물. 속이 편안해지는 맛." },
+    { name: "파스타",     cat: "양식", emoji: "🍝", desc: "알리오 올리오, 까르보나라, 봉골레 — 취향대로 선택." },
+    { name: "피자",       cat: "양식", emoji: "🍕", desc: "쫄깃한 도우에 치즈가 가득. 나눠 먹으면 더 맛있어." },
+    { name: "스테이크",   cat: "양식", emoji: "🥩", desc: "미디엄 레어로 구운 부드러운 소고기. 오늘만큼은 특별하게." },
+    { name: "리조또",     cat: "양식", emoji: "🫘", desc: "크림 또는 토마토 베이스로 만든 이탈리안 쌀 요리." },
+    { name: "떡볶이",     cat: "분식", emoji: "🍢", desc: "쫄깃한 떡과 매콤달콤한 고추장 소스의 국민 간식." },
+    { name: "순대국밥",   cat: "분식", emoji: "🥣", desc: "뽀얀 국물에 순대와 내장이 가득. 든든한 서민 음식." },
+    { name: "김밥",       cat: "분식", emoji: "🌯", desc: "참기름 향 가득한 밥에 다양한 재료가 들어간 한 줄." },
+    { name: "라면",       cat: "분식", emoji: "🍜", desc: "라면도 맛있는 저녁 식사. 계란 하나 추가는 필수." },
+    { name: "햄버거",     cat: "패스트푸드", emoji: "🍔", desc: "두꺼운 패티와 신선한 채소, 소스가 들어간 간편한 식사." },
+    { name: "치킨",       cat: "패스트푸드", emoji: "🍗", desc: "바삭하게 튀긴 프라이드, 아니면 매콤한 양념치킨?" },
+    { name: "타코",       cat: "패스트푸드", emoji: "🌮", desc: "또르띠야에 고기와 채소, 살사 소스가 가득." },
   ];
 
   let activeFilter = "전체";
@@ -372,16 +405,16 @@
     card.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
-  /* ===== RONALDO ANIMATION ===== */
-  function spawnStars() {
-    const overlay = document.getElementById("roOverlay");
-    const emojis = ["⭐","✨","🌟","💫","🎉","🏆","🔥","👑"];
+  /* ===== CORGI ANIMATION ===== */
+  function spawnPaws() {
+    const overlay = document.getElementById("corgiOverlay");
+    const items = ["🐾","🦴","🐕","💛","⭐","✨","🌟"];
     for (let i = 0; i < 14; i++) {
       const el = document.createElement("div");
-      el.className = "ro-star";
-      el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      el.className = "cg-paw";
+      el.textContent = items[Math.floor(Math.random() * items.length)];
       const angle = (i / 14) * Math.PI * 2 + (Math.random() - 0.5) * 0.4;
-      const dist  = 80 + Math.random() * 90;
+      const dist  = 70 + Math.random() * 90;
       el.style.setProperty("--tx", (Math.cos(angle) * dist) + "px");
       el.style.setProperty("--ty", (Math.sin(angle) * dist) + "px");
       overlay.appendChild(el);
@@ -390,42 +423,35 @@
     }
   }
 
-  function runRonaldo(callback) {
+  function runCorgi(callback) {
     if (isAnimating) return;
     isAnimating = true;
     document.getElementById("spinBtn").disabled = true;
 
-    const overlay = document.getElementById("roOverlay");
-    const figure  = document.getElementById("roFigure");
-    const siuuu   = document.getElementById("roSiuuu");
+    const overlay = document.getElementById("corgiOverlay");
+    const figure  = document.getElementById("corgiFigure");
+    const wal     = document.getElementById("corgiWal");
 
-    // Reset
-    figure.className = "ro-figure";
-    siuuu.classList.remove("show");
+    figure.className = "corgi-figure";
+    wal.classList.remove("show");
     overlay.classList.add("active");
 
-    // Phase 1: Run in (100ms delay for overlay fade)
+    // Phase 1: Run in
     setTimeout(() => figure.classList.add("running"), 100);
 
-    // Phase 2: Jump (after running in)
+    // Phase 2: Happy bounce
     setTimeout(() => {
       figure.classList.remove("running");
-      figure.classList.add("jumping");
-    }, 950);
+      figure.classList.add("happy");
+    }, 1100);
 
-    // Phase 3: Land in SIUU pose
+    // Phase 3: 왈왈! + paw burst
     setTimeout(() => {
-      figure.classList.remove("jumping");
-      figure.classList.add("posing");
-    }, 2050);
+      wal.classList.add("show");
+      spawnPaws();
+    }, 1350);
 
-    // Phase 4: SIUUU! + stars
-    setTimeout(() => {
-      siuuu.classList.add("show");
-      spawnStars();
-    }, 2280);
-
-    // Phase 5: Fade out overlay, show result
+    // Phase 4: Fade out, show result
     setTimeout(() => {
       overlay.classList.remove("active");
       setTimeout(() => {
@@ -433,13 +459,13 @@
         isAnimating = false;
         document.getElementById("spinBtn").disabled = false;
       }, 350);
-    }, 3500);
+    }, 2800);
   }
 
   document.getElementById("spinBtn").addEventListener("click", () => {
     const list = filtered();
     const pick = list[Math.floor(Math.random() * list.length)];
-    runRonaldo(() => showResult(pick));
+    runCorgi(() => showResult(pick));
   });
 
   document.getElementById("filters").addEventListener("click", e => {
